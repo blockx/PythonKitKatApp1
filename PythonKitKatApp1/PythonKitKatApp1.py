@@ -1,21 +1,24 @@
 import sys
 import filecmp
 
+# c)
 def compare_op():
     original_stdout = sys.stdout # Save a reference to the original standard output
+
     with open('kitkat.txt', 'w') as f:
-        sys.stdout = f # Change the standard output to the file we created.
+        sys.stdout = f # Change the standard output to file kitkat.txt
         kitkat()
         f.close()
     with open('kitkatnodiv.txt', 'w') as f:
-        sys.stdout = f # Change the standard output to the file we created.
+        sys.stdout = f # Change the standard output to file kitkatnodiv.txt
         kitkatnodiv()
         f.close()
     sys.stdout = original_stdout # Reset the standard output to its original value
+
     files_equal=filecmp.cmp('kitkat.txt', 'kitkatnodiv.txt')
     print(files_equal)
 
-
+# b)
 def kitkatnodiv():
     threecount=0
     fivecount=0
@@ -35,6 +38,7 @@ def kitkatnodiv():
         else:
             print(i)
 
+# a)
 def kitkat():
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
