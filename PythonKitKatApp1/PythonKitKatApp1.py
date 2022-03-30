@@ -1,12 +1,12 @@
 def kitkat(max):
-    if (max != 0):
+    if max != 0:
         for i in range(1, 100, 1):
             found_kit = False
             found_kat = False
 
-            if ((i % 3) == 0): 
+            if i % 3 == 0: 
                 found_kit = True;
-            if ((i % 5) == 0): 
+            if i % 5 == 0: 
                 found_kat = True;
 
             if found_kit == True and found_kat == True:
@@ -17,8 +17,6 @@ def kitkat(max):
                 print("Kat")
             else:
                 print(i)
-
-
 
 def main():
     kitkat(100)
