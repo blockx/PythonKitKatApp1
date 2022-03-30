@@ -4,7 +4,6 @@ def kitkatnodiv():
     for i in range(1, 101):
         threecount+=1
         fivecount+=1
-
         if threecount == 3 and fivecount == 5:
             threecount=0
             fivecount=0
