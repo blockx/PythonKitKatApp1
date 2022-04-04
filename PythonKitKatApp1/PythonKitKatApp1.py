@@ -3,7 +3,7 @@ import filecmp
 
 # c)
 def compare_op():
-    original_stdout = sys.stdout # Save a reference to the original standard output
+    original_stdout = sys.stdout # Save the original standard output
 
     with open('kitkat.txt', 'w') as f:
         sys.stdout = f # Change the standard output to file kitkat.txt
@@ -13,7 +13,7 @@ def compare_op():
         sys.stdout = f # Change the standard output to file kitkatnodiv.txt
         kitkatnodiv()
         f.close()
-    sys.stdout = original_stdout # Reset the standard output to its original value
+    sys.stdout = original_stdout # Restore standard output
 
     files_equal=filecmp.cmp('kitkat.txt', 'kitkatnodiv.txt')
     print(files_equal)
